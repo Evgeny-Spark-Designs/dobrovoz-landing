@@ -2564,6 +2564,25 @@
 /* текст под IKEA/Zara/Nike в hero - автоконтраст к фону (глобусу), как на danzla */
 .home-hero-desc{mix-blend-mode:difference}
 .home-hero-desc .txt{color:#fff!important}
+
+/* текст под IKEA/Zara/Nike в hero - анимация появления красит буквы через
+   background-clip:text с градиентом, color тут не работает - обнуляем клип,
+   чтобы mix-blend-mode блендил ровный белый цвет */
+.home-hero-desc .split-line-p{
+  background:none!important;-webkit-text-fill-color:#fff!important;color:#fff!important
+}
+
+/* кнопка Как это работает - была едва видна (outline на тёмном фоне), делаем чёрной заливкой */
+.home-hero-links a[href="/services"] .btn{
+  background:#111!important;border-color:#111!important
+}
+.home-hero-links a[href="/services"] .btn .txt{color:#fff!important}
+
+/* кнопки формы заказа растягиваются на всю ширину на мобильном - должны быть по контенту */
+@media screen and (max-width:767px){
+  .eo-actions{flex-direction:column;align-items:flex-start}
+  .eo-actions .btn,.eo-actions .eo-btn-outline{width:auto!important;min-width:0!important;flex:none!important}
+}
 </style><script>
 (function(){
   var MAX_ITEMS = 50;
