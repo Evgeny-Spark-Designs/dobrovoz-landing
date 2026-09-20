@@ -2529,6 +2529,11 @@
 @media screen and (max-width:767px){
   .home-service-mb-second-screen{padding-bottom:60svh!important}
 }
+
+/* заголовок Контролируем каждый этап - длинное слово не влезает в колонку на мобильном */
+@media screen and (max-width:767px){
+  .home-service-mb-title .heading{overflow-wrap:break-word;word-break:break-word;font-size:3rem}
+}
 </style><script>
 (function(){
   var MAX_ITEMS = 50;
