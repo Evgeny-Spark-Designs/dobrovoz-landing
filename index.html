@@ -2536,29 +2536,37 @@
 /* мобильное меню - было desktop-выпадашкой сбоку без своего фона, на мобильном не адаптировано */
 @media screen and (max-width:767px){
   .header-dropdown{
-    position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;
-    width:100%!important;height:100svh!important;max-height:none!important;
+    position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;
+    width:100%!important;height:auto!important;max-height:82svh!important;
     grid-template-columns:1fr!important;grid-auto-columns:1fr!important;
-    transform:none!important;background:#111!important;
-    padding-top:9rem!important;overflow-y:auto!important
+    transform:none!important;
+    background:rgba(17,17,17,.86)!important;
+    -webkit-backdrop-filter:blur(14px)!important;backdrop-filter:blur(14px)!important;
+    box-shadow:0 1rem 3rem rgba(0,0,0,.35)!important;
+    padding-top:7.4rem!important;overflow-y:auto!important
   }
   .header-dropdown-inner{
     display:flex!important;flex-direction:column!important;min-width:0!important;
-    width:100%!important;padding:0 2.4rem 2.4rem!important
+    width:100%!important;padding:0 2.4rem 1.6rem!important
   }
   .header-dropdown-body{
     display:block!important;grid-template-columns:1fr!important;width:100%!important;min-width:0!important;
-    padding-top:0!important;height:auto!important
+    padding-top:0!important;padding-bottom:0!important;height:auto!important;
+    grid-row-gap:0!important;row-gap:0!important
   }
   .header-dropdown .header-dropdown-body-inner,
   .header-dropdown-body .header-dropdown-body-inner{
     display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;
-    width:100%!important;min-width:0!important;height:auto!important
+    width:100%!important;min-width:0!important;height:auto!important;gap:0!important
   }
   .header-dropdown .header-dropdown-link,
   .header-dropdown-body-inner .header-dropdown-link{
     width:100%!important;min-width:0!important;flex:none!important
   }
+  .header-dropdown-link-inner{
+    padding-top:.6rem!important;padding-bottom:.6rem!important
+  }
+  .header-dropdown-link .txt{font-size:1.4rem!important}
 }
 
 /* текст под IKEA/Zara/Nike в hero - автоконтраст к фону (глобусу), как на danzla */
