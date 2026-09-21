@@ -2129,7 +2129,7 @@
 
 /* мобильная версия hero */
 @media screen and (max-width:767px){
-  .home-hero .home-hero-text-wrap{justify-content:flex-end!important;padding-top:34vh!important}
+  .home-hero .home-hero-text-wrap{justify-content:flex-end!important;padding-top:34svh!important}
   .home-hero .home-hero-desc .txt{color:#111!important;font-size:1.8rem!important}
   .home-hero .home-hero-btn .btn{padding:1.8rem 2.6rem!important}
   .home-hero .home-hero-links{flex-wrap:wrap!important;gap:1.2rem!important}
@@ -2214,6 +2214,11 @@
   requestAnimationFrame(fade);
 })();
 </script><style>/* euro-rf layout tweaks */
+@media screen and (max-width:991px) and (min-width:768px){
+  .home-hero .home-hero-btn .btn{padding:1.8rem 2.6rem!important}
+  .home-hero .home-hero-btn .btn-txt .txt,.home-hero .home-hero-btn .txt{font-size:1.5rem!important}
+}
+
 .header-act{grid-column-gap:1.4rem}
 .header-user-btn{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;color:currentColor;flex:none}
 .header-user-btn svg{width:100%;height:100%;display:block}
@@ -2415,7 +2420,7 @@
 }
 
 /* мобильное меню - было desktop-выпадашкой сбоку без своего фона, на мобильном не адаптировано */
-@media screen and (max-width:767px){
+@media screen and (max-width:991px){
   .header-dropdown{
     position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:auto!important;
     width:100%!important;height:auto!important;max-height:82svh!important;
