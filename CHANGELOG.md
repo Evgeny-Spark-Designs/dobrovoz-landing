@@ -3,6 +3,7 @@
 ## 2026-10-06 — GitHub Pages asset publishing
 
 - Added the `.nojekyll` deployment marker so GitHub Pages serves the `_assets` directory unchanged. This restores the main Webflow stylesheet, scripts and image assets that were otherwise excluded by Jekyll.
+- Updated the primary stylesheet URL version so browsers discard any cached missing-asset response after the deployment change.
 
 ## 2026-10-06 — Mobile loading-screen fail-safe
 
