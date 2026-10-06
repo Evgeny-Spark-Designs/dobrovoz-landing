@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-06 — GitHub Pages asset publishing
+
+- Added the `.nojekyll` deployment marker so GitHub Pages serves the `_assets` directory unchanged. This restores the main Webflow stylesheet, scripts and image assets that were otherwise excluded by Jekyll.
+
 ## 2026-10-06 — Mobile loading-screen fail-safe
 
 - Reduced the first-load wait ceiling from 6.5 seconds to 1.5 seconds so slow third-party assets cannot leave the mobile site on a black screen.
