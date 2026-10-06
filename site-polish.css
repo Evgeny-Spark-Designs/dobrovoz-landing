@@ -1007,11 +1007,13 @@ textarea {
 
 .home-partners-item-thumb-fallback {
   flex-direction: column;
+  overflow: visible;
 }
 
 .home-partners-item-thumb-captioned {
   flex-direction: column;
   gap: 0.45rem;
+  overflow: visible;
 }
 
 .home-partners-item-logo-caption {

@@ -154,41 +154,42 @@
     'Nintendo': 1.08, 'Philips': 0.92, 'LG': 2.05, 'JBL': 1.45,
     'Samsung': 1.05, 'Google Store': 1,
 
-    'Chanel': 1.12, 'Dior': 0.95, 'Lancôme': 1, 'Estée Lauder': 1.08,
+    'Chanel': 1.12, 'Dior': 0.95, 'Lancôme': 1, 'Estée Lauder': 1.24,
     'Clinique': 0.98, 'Clarins': 1, 'Shiseido': 1, 'Guerlain': 1,
     'Yves Saint Laurent Beauty': 1.02, 'Giorgio Armani Beauty': 1.15,
-    'La Roche-Posay': 1.23, 'Vichy': 2, 'Avène': 2.1,
-    'Bioderma': 1, 'Kérastase': 1.22, 'Olaplex': 1.42,
+    'La Roche-Posay': 1.72, 'Vichy': 2.65, 'Avène': 2.75,
+    'Bioderma': 1, 'Kérastase': 1.22, 'Olaplex': 2.05,
     'L’Oréal Professionnel': 1, 'MAC Cosmetics': 1,
-    'Charlotte Tilbury': 1.45, 'The Ordinary': 1.42, 'makeup.lt': 1.45,
+    'Charlotte Tilbury': 2.05, 'The Ordinary': 2.05, 'makeup.lt': 2.15,
 
-    'LEGO': 1.22, 'Barbie / Mattel': 1.08, 'Fisher-Price': 1.08,
-    'Hasbro': 1.18, 'Playmobil': 1.12, 'Reima': 1.42,
-    'Zara Kids': 1, 'H&M Kids': 1, 'Next Kids': 1.42,
-    'Cybex': 1.42, 'Bugaboo': 1.42, 'Stokke': 1.42,
-    'Doona': 1.45, 'Maxi-Cosi': 1.42, 'Britax Römer': 1.08,
-    'Baby-Walz': 1.42, 'BabyOne': 1.5, 'Babypark': 1.72,
-    'Kids-world': 1.42,
+    'LEGO': 1.38, 'Barbie / Mattel': 1.25, 'Fisher-Price': 1.08,
+    'Hasbro': 2.05, 'Playmobil': 1.12, 'Reima': 2.1,
+    'Zara Kids': 1, 'H&M Kids': 1, 'Next Kids': 2.1,
+    'Cybex': 2.1, 'Bugaboo': 2.1, 'Stokke': 2.1,
+    'Doona': 2.15, 'Maxi-Cosi': 2.1, 'Britax Römer': 1.08,
+    'Baby-Walz': 2.1, 'BabyOne': 2.2, 'Babypark': 2.35,
+    'Kids-world': 2.1,
 
-    'Fender': 1.05, 'Gibson': 1.42, 'Yamaha': 1.16, 'Roland': 1,
-    'Tamiya': 1.3, 'Revell': 1.42, 'Bandai Hobby': 1.42,
-    'Warhammer': 1.42, 'Thomann': 1.42,
+    'Fender': 1.05, 'Gibson': 2.1, 'Yamaha': 1.45, 'Roland': 1,
+    'Tamiya': 2.05, 'Revell': 2.1, 'Bandai Hobby': 2.1,
+    'Warhammer': 2.1, 'Thomann': 2.1,
 
-    'CandyOnline': 1.45, 'My American Market': 1.45,
-    'NikanKitchen': 1.45, 'Sugafari': 1.45, 'AmericanCandy.de': 1.45,
+    'CandyOnline': 2.15, 'My American Market': 2.15,
+    'NikanKitchen': 2.15, 'Sugafari': 2.15, 'AmericanCandy.de': 2.15,
 
-    'Atomic': 1.42, 'Rossignol': 1.42, 'Fischer': 1.22, 'HEAD': 1.42,
-    'Columbia': 1.42, 'The North Face': 1.15, 'Adidas Terrex': 1.08,
-    'Helly Hansen': 1.28, 'Timberland': 0.95, 'Merrell': 1.42,
-    'Oakley': 0.92, 'Burton': 1.08, 'Nitro': 1.42,
-    'Jones': 1.42, 'CAPiTA': 1.42, 'Union': 1.42,
-    'ThirtyTwo': 1.42, 'DC Shoes': 1.42, 'Snowleader': 1.42,
-    'Bergfreunde': 1.42, 'Ekosport': 1.42, 'Sport Conrad': 1.42
+    'Atomic': 2.1, 'Rossignol': 2.1, 'Fischer': 1.75, 'HEAD': 2.1,
+    'Columbia': 2.1, 'The North Face': 1.85, 'Adidas Terrex': 1.7,
+    'Helly Hansen': 1.85, 'Timberland': 0.95, 'Merrell': 2.1,
+    'Oakley': 0.92, 'Burton': 1.9, 'Nitro': 2.1,
+    'Jones': 2.1, 'CAPiTA': 2.1, 'Union': 2.1,
+    'ThirtyTwo': 2.1, 'DC Shoes': 2.1, 'Snowleader': 2.1,
+    'Bergfreunde': 2.1, 'Ekosport': 2.1, 'Sport Conrad': 2.1
   };
 
   /* Symbol-only artwork that needs a readable word label in the card. */
   var fullLogoCaptions = {
     'Yamaha': 'Yamaha',
+    'Burton': 'Burton',
     'Westwing': 'Westwing',
     'Giorgio Armani Beauty': 'Beauty'
   };

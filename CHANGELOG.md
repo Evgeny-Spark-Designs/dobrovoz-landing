@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-06 — Catalogue-wide optical scale pass
+
+- Enlarged the user-marked compact logos across cosmetics, children’s goods, hobby, food and drinks, and winter-sports categories so their visual weight matches neighbouring full wordmarks.
+- Applied larger corrections to favicon-plus-name cards, which otherwise appeared much smaller than image-based logos; made the smaller requested adjustments for Estée Lauder, LEGO, Barbie / Mattel and Yamaha.
+- Added the missing “Burton” caption below its symbol-only logo.
+- Updated the catalogue script cache key so the revised scale values load immediately.
+
 ## 2026-10-06 — GitHub publication
 
 - Replaced the contents of the existing `Evgeny-Spark-Designs/dobrovoz-landing` `main` branch with this local release while preserving the repository address and its GitHub Pages site.
