@@ -1,0 +1,52 @@
+DobroVozTurk local review release
+Updated: 2026-10-05 +03:00
+Source copy: dobrovoz-publish-2026-10-05-self-contained-mobile-2
+
+Changes in this copy:
+- success-modal tracking caption updated;
+- all 140 brand cards open official sites in a new tab;
+- footer payment link replaced with an About link;
+- hover animation removed from footer Telegram contacts;
+- mouse-click focus ring removed from the mobile menu button;
+- globe rim glow now overlays country-outline dots;
+- restored the original United Carriers 2D intersection entrance: the road wrapper now animates explicitly from one viewport to the right into x=0;
+- restored the original synchronous upward transition timing after the truck turn.
+- made the full area of every brand card clickable; official brand sites open in a new tab.
+- fixed the desktop side-to-top truck transition on cold/remote loads by preloading the complete transition frame sequence before it is shown;
+- kept the restored United Carriers intersection and downward road unchanged.
+- resized the mobile hero headline fluidly across 320-440px phone widths and removed the forced no-wrap rule that clipped its right edge;
+- separated the mobile headline from the description and allowed its animated line wrappers to determine their real height;
+- extended the hero artwork into the iPhone safe area, removing the separate strip above the page while keeping header content below the camera cutout.
+- converted every local HTML, CSS and JavaScript asset reference to a release-local path;
+- the release is self-contained and can be deployed into an empty web root or an arbitrary subdirectory without loading files from an older site copy.
+- fixed the first-play-only road overlap during the desktop side-to-top truck transition;
+- initialized the incoming intersection road off-screen before ScrollTrigger starts, so the cold-load state now matches all later forward and reverse passes.
+
+Telegram/order submission behavior: unchanged
+
+DobroVozTurk — актуальная база для дальнейших правок
+Updated: 2026-10-05 +03:00
+Base: dobrovoz-2026-10-05-first-pass-road-fix-3 + правки команды
+
+Правки команды поверх релиза (не терять в следующих релизах):
+- Crocs: логотип _assets/brands-color/crocs-wordmark.png;
+- H&M Home: отдельный логотип _assets/brands-color/hmhome.svg;
+- _assets/brand-reveal-fix.js — карточки брендов гарантированно проявляются (подключён в index.html после brand-category-tabs.js);
+- site-polish.css: блок «Наведение на магазин» (лого не гаснет при hover, лёгкая подсветка ячейки);
+- вкладка «Одежда и обувь» (20 шт.): Zara, H&M, Crocs, Adidas, Nike, Uniqlo, Puma, New Balance, Lacoste, The North Face,
+  Mango, Massimo Dutti, Zalando, Bershka, Pull&Bear, Stradivarius, Reserved, Sinsay, Deichmann, JD Sports.
+  Adidas → https://www.adidas.de/en, Nike → https://www.nike.com/de/
+
+Пожалуйста, делайте следующие правки от этой сборки.
+
+Дополнение 2026-10-05 (client-menu-fix-1):
+- Исправлено открытие мобильного меню при первом нажатии.
+- Добавлено корректное закрытие по повторному нажатию, выбору пункта, Escape и смене ширины экрана.
+- На мобильной ширине скрыта правая полоса прокрутки без отключения прокрутки страницы.
+- На мобильной ширине убран отдельный растровый ореол, создававший второе кольцо поверх глобуса.
+
+Дополнение 2026-10-05 (mobile-menu-header-fix-1):
+- В открытом мобильном меню логотип и крестик выровнены по одной строке.
+- Верхняя плашка меню уменьшена до 68 px; лишнее пустое место под логотипом удалено.
+- Проверено открытие и закрытие меню на ширинах 320, 390 и 440 px.
+- Сервер не обновлялся: версия оставлена только локально.

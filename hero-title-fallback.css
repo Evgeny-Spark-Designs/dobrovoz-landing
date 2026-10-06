@@ -1,0 +1,88 @@
+/* Fallback for the split-text animation in the local globe scene. */
+.home-hero-title .split-line-p {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* The highlight animation must not leave split text transparent after it ends. */
+.split-line-p {
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.home-hero-title .split-line-p {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* A blue sweep restores the hero animation without ever making the letters transparent. */
+.home-hero-title .split-line-p {
+  background: linear-gradient(110deg, #fff 0%, #fff 42%, #4d75ff 50%, #fff 58%, #fff 100%) !important;
+  background-size: 280% 100% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: dobrovoz-blue-text-sweep 1.5s ease-out both;
+}
+
+@keyframes dobrovoz-blue-text-sweep {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+.home-hero-text-wrap,
+.home-hero-title {
+  position: relative;
+  z-index: 4;
+}
+
+/* Keep the service description visually separated from the blue transition. */
+.home-intro-desc {
+  padding-top: 24px;
+}
+
+@media (max-width: 767px) {
+  .home-intro-desc {
+    padding-top: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-hero-title {
+    width: 640px;
+  }
+
+  .home-hero-title .heading {
+    font-size: 60px !important;
+    line-height: 1.05 !important;
+  }
+}
+
+/* On narrow viewports the entrance animation queues its reveal tweens via
+   requestAnimationFrame *after* the timeline is already told to play, so the
+   race loses and the globe/labels/title stay stuck at their hidden opacity-0
+   starting state - a black hero until the visitor scrolls once. Force the
+   resting (fully revealed) state so nothing depends on that timeline. */
+@media (max-width: 767px) {
+  .home-hero-globe-shadow,
+  .globe-label-text,
+  .home-hero-canvas,
+  .home-hero-globe-blur,
+  .home-hero-bg-mb {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+  }
+
+  .home-hero-globe-shadow,
+  .home-hero-globe-blur,
+  .home-hero-globe {
+    transform: none !important;
+  }
+}

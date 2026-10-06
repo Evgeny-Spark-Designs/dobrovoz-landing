@@ -1,0 +1,7 @@
+/* The animated container intentionally uses its original unbranded texture. */
+.home-service-truck-cont::after,
+.home-service-truck-full::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}

@@ -1,0 +1,1697 @@
+html {
+  scroll-behavior: smooth;
+  cursor: auto !important;
+}
+
+/* Тикер в шапке со ссылкой на LinkedIn United Carriers (чужая компания, текст "Как это
+   работает" никак не связан с LinkedIn) раньше прятался только на ширинах <=991px —
+   на десктопе он был виден и вёл на чужой сайт. Прячем везде. */
+.header-linkedin {
+  display: none !important;
+}
+
+body {
+  cursor: auto !important;
+}
+
+/* Keep the page itself tied to the viewport at every breakpoint. Webflow has
+   several decorative scenes that are intentionally wider than the screen;
+   they must never become the document width. */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.body-inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.main,
+.main-inner {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+a,
+button,
+[role="button"],
+select,
+label[for] {
+  cursor: pointer !important;
+}
+
+input,
+textarea {
+  cursor: text !important;
+}
+
+.cursor-wrap,
+.cursor,
+.cursor-main,
+.cursor-trail-item-wrap {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#service-info,
+#categories,
+#how-it-works,
+#order-form,
+#contacts {
+  scroll-margin-top: 72px;
+}
+
+/* В футере оставляем слоган, контакты и нижнюю юридическую строку. */
+.footer-socials,
+.footer-menu,
+.footer-info {
+  display: none !important;
+}
+
+.footer-sub {
+  margin-bottom: clamp(24px, 3vw, 48px) !important;
+}
+
+.footer-main {
+  padding-top: clamp(24px, 3vw, 48px) !important;
+}
+
+@media (max-width: 767.98px) {
+  html,
+  body,
+  .body-inner,
+  .header-dropdown,
+  .header-dropdown-body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  .body-inner::-webkit-scrollbar,
+  .header-dropdown::-webkit-scrollbar,
+  .header-dropdown-body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  #service-info,
+  #categories,
+  #how-it-works,
+  #order-form,
+  #contacts {
+    scroll-margin-top: 56px;
+  }
+}
+
+/* Футер: крупнее шрифт — легче читать возрастной аудитории. Фон — как у страницы (белый). */
+.footer {
+  background-color: #fff !important;
+}
+
+.footer [class*="fs-"] {
+  font-size: 1.35em !important;
+}
+
+/* Ссылки в нижней юридической строке (Политика/Оплата/Возврат/Cookie) могут занимать
+   разное число строк при крупном шрифте — выравниваем по верхнему краю, иначе короткая
+   соседняя ссылка съезжает на середину и наезжает на перенос текста у длинной. */
+.footer-legal-item {
+  align-items: flex-start !important;
+}
+
+.footer-gb-legal-menu {
+  grid-row-gap: 1.6rem !important;
+  row-gap: 1.6rem !important;
+}
+
+/* На широких экранах копирайт, юридические ссылки и заметка про оплату при крупном
+   шрифте перестают помещаться в одну строку и лепятся друг к другу — разрешаем перенос. */
+.footer-gb-bot-inner {
+  flex-wrap: wrap !important;
+  row-gap: 1.2rem !important;
+  column-gap: 2rem !important;
+}
+
+.footer-gb-wrap {
+  flex-wrap: wrap !important;
+  row-gap: 2rem !important;
+  column-gap: 2rem !important;
+}
+
+.footer-gb-legal-menu {
+  flex-wrap: wrap !important;
+  row-gap: 0.6rem !important;
+  column-gap: 1.6rem !important;
+}
+
+@media (min-width: 768px) {
+  .footer-gb-legal-menu {
+    column-gap: 2.8rem !important;
+  }
+}
+
+/* На мобильном это всё ещё CSS grid в 2 колонки (flex-wrap выше на него не действует) -
+   "Политика конфиденциальности" (2 слова) переносится посреди фразы, а короткая
+   "Оплата" встаёт рядом на той же строке - читается вперемешку. По одной ссылке в строке. */
+@media (max-width: 767.98px) {
+  .footer-gb-legal-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: 1.2rem !important;
+  }
+}
+
+/* Обёртка футера верстается с фиксированной высотой (103rem/134.13rem) под старый,
+   более длинный вариант футера (с блоком "Компания" и мелким шрифтом). После правок
+   реальный футер стал короче обёртки — снизу оставалась пустая белая полоса. */
+.footer-wrap {
+  height: auto !important;
+}
+
+/* Карту в футере убрали по запросу - без неё колонка "Менеджер/Бот/Канал"
+   растягивалась flex'ом (justify-content:space-between) на всю высоту
+   строки грида, которую раньше задавала высокая карта - отсюда были большие
+   пустые промежутки. Схлопываем колонку до высоты контента (см. ниже). */
+.footer-main-map {
+  display: none !important;
+}
+
+/* "Работаем: Европа/Россия" убираем везде - не несёт полезной информации. */
+.footer-main-address .footer-content-item:not(.item-border-top) {
+  display: none !important;
+}
+
+/* Лого в футере убрано по правке - не нужно. */
+.footer-thumb {
+  display: none !important;
+}
+
+/* "Бот заказов" убираем из колонки контактов - остаются Менеджер и Канал.
+   Селектор по ссылке, а не :nth-child - позиция сдвигается мобильной
+   картинкой грузовика, которая вставляется между пунктами (см. footer-truck.js). */
+.footer-main-contact .footer-content-item:has(a[href*="DobroVoz_Order_bot"]) {
+  display: none !important;
+}
+
+/* footer-main была отдельным вложенным гридом (адрес+контакты в 2 колонки) -
+   разворачиваем её в родительский грид (display:contents) и ставим "Самовывоз"
+   и "Менеджер/Канал" рядом в одну строку по линиям родителя.
+   Только на десктопе: на мобильном родительский грид уже 1-колоночный и с
+   другими line-номерами - явные grid-column тут привели бы к обрезке текста. */
+.footer-dobrovoz-truck {
+  display: none;
+}
+
+/* Мобильная копия грузовика (вставляется отдельным элементом в footer-truck.js),
+   ставим прямо над "Менеджер". .footer-main-contact на мобильном - grid
+   с явным grid-row у пунктов Менеджер(2/3) и Канал(3/4) - авто-вставленный
+   элемент без явного grid-row улетал бы в свободный ряд 1 (см. картинки того
+   же .footer-main выше, ряд 1 не занят). Переводим колонку в обычный flex,
+   чтобы порядок совпадал с порядком DOM. */
+.footer-dobrovoz-truck-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .footer-main-contact {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .footer-dobrovoz-truck-mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0.4rem 0;
+    pointer-events: none;
+  }
+
+  .footer-dobrovoz-truck-mobile img {
+    display: block;
+    width: min(100%, 32rem);
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .footer-main {
+    display: contents !important;
+  }
+
+  .footer-main-address {
+    grid-row: 2 / 3 !important;
+    grid-column: 2 / 7 !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-main-contact {
+    grid-row: 2 / 3 !important;
+    grid-column: 7 / 9 !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-dobrovoz-truck {
+    grid-row: 2 / 3;
+    grid-column: 9 / -2;
+    align-self: center;
+    justify-self: stretch;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    min-width: 0;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .footer-dobrovoz-truck img {
+    display: block;
+    width: min(100%, 52rem);
+    height: auto;
+    object-fit: contain;
+    object-position: right bottom;
+    transform: scale(1.38);
+    transform-origin: right center;
+  }
+}
+
+.footer-main-contact {
+  justify-content: flex-start !important;
+  row-gap: 2.4rem !important;
+  margin-top: 0 !important;
+}
+
+/* Ссылка "Настройки cookie" в юридической строке футера - лишний пункт,
+   убираем; сам баннер согласия cookieyes при этом не трогаем. */
+.footer-legal-item:has(.cky-banner-element) {
+  display: none !important;
+}
+
+/* Рамка вокруг лого в футере (была нужна для фото тоннеля, для лого выглядит
+   как лишняя плашка) - убираем, оставляем лого на фоне страницы. */
+.footer-thumb-logo {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Заметка "Цены указаны в рублях..." стоит в одной строке с кликабельными
+   юридическими ссылками (Политика/Оплата/Возврат/Cookie) и оформлена тем же
+   шрифтом - выглядит как ещё одна ссылка, хотя это просто текст. Делаем её
+   визуально некликабельной: светлее и без подчёркивания при наведении. */
+.footer-legal-payment {
+  color: #1119 !important;
+  font-weight: 400 !important;
+}
+
+/* Заголовок "Доставим из любого интернет-магазина в Европе." в футере убран. */
+.footer-sub {
+  display: none !important;
+}
+
+/* Блок магазинов: лого были мелкие - увеличиваем. Сами лого теперь цветные
+   (настоящие цвета брендов вместо ч/б), фон плашек оставляем нейтральным. */
+.home-partners-item-thumb {
+  height: 9rem !important;
+}
+
+@media (max-width: 767.98px) {
+  .home-partners-item-thumb {
+    height: 5rem !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .home-partners-item-thumb img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+/* Mobile header: the menu trigger has a taller click area than the two icon
+   buttons, so bottom alignment made their visual centres disagree. */
+@media (max-width: 767.98px) {
+  .header-inner .container.grid {
+    align-items: center !important;
+  }
+
+  .header-logo,
+  .header-act,
+  .header-menu {
+    align-self: center !important;
+  }
+
+  .header-act,
+  .header-menu,
+  .header-menu-toggle-wrap,
+  .header-menu-toggle {
+    align-items: center !important;
+  }
+
+  .header-user-btn,
+  .header-user-btn svg,
+  .header-menu-toggle-text,
+  .header-menu-toggle-text-inner,
+  .header-menu-toggle-menu .txt {
+    vertical-align: middle;
+  }
+}
+
+/* Mobile brand catalogue: keep the section compact until the visitor asks
+   to see the complete list. Desktop keeps the original Webflow layout. */
+.mobile-brands-toggle {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .home-partners-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-flow: row !important;
+    width: 100% !important;
+  }
+
+  .home-partners-item {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .home-partners-main.mobile-brands-collapsed .mobile-brand-extra {
+    display: none !important;
+  }
+
+  .mobile-brands-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    grid-column: 1 / -1 !important;
+    justify-self: stretch;
+    box-sizing: border-box;
+    width: calc(100% - 2rem);
+    min-height: 3.5rem;
+    margin: 1.5rem auto 0;
+    padding: 0.85rem 1.25rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-brands-toggle::after {
+    content: "+";
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 0.8;
+    transition: transform 220ms ease;
+  }
+
+  .mobile-brands-toggle[aria-expanded="true"]::after {
+    transform: rotate(45deg);
+  }
+
+  .home-partners-wrap {
+    overflow: visible !important;
+    z-index: 4 !important;
+  }
+
+}
+
+/* Блок "Заказ + калькулятор": калькулятор слева, заказ справа (визуально
+   разделены карточками), плюс секция была стерильно белой на фоне цветных
+   блоков выше по странице - добавили фон и цветные акценты карточек. */
+.eo-section {
+  background: #fff !important;
+}
+
+.eo-section .container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  gap: 3.2rem !important;
+}
+
+.eo-head {
+  flex: 1 1 100% !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.eo-line-full {
+  display: none !important;
+}
+
+.eo-calc {
+  order: 1 !important;
+  flex: 1 1 42rem !important;
+  margin-top: 0 !important;
+  background: #fff !important;
+  border: 1px solid rgba(0, 22, 203, 0.2) !important;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 22, 203, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.eo-order {
+  order: 2 !important;
+  flex: 1.2 1 48rem !important;
+  margin-top: 0 !important;
+  background: #fff !important;
+  border: 1px solid rgba(244, 83, 0, 0.2) !important;
+  box-shadow: 0 1.2rem 3.2rem rgba(244, 83, 0, 0.06) !important;
+}
+
+.eo-calc .eo-block-title {
+  color: #0016cb !important;
+}
+
+.eo-order .eo-block-title {
+  color: #f45300 !important;
+}
+
+.eo-calc-out {
+  background: linear-gradient(135deg, #414a68 0%, #515a7a 100%) !important;
+}
+
+/* Раньше здесь был padding-bottom, компенсирующий оптическое смещение символа
+   "×" (шрифтовой глиф). Теперь кнопка использует симметричную SVG-иконку
+   (см. index.html, .eo-item-remove), которая и так центрируется точно через
+   flex - компенсация больше не нужна и только смещала иконку. */
+.eo-item-remove {
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.eo-item-remove-ic {
+  width: 0.7em !important;
+  height: 0.7em !important;
+  flex: none !important;
+  display: block !important;
+}
+
+@media screen and (max-width: 991px) {
+  .eo-calc,
+  .eo-order {
+    flex: 1 1 100% !important;
+  }
+}
+
+
+/* The exported globe also includes a large raster blur and exterior shadows.
+   At some viewport ratios they separate from the WebGL sphere and look like a
+   second orange/blue globe. Keep only the inset atmosphere at every width. */
+.home-hero .home-hero-globe-blur {
+  display: none !important;
+}
+
+.home-hero .home-hero-globe-shadow.orange {
+  box-shadow:
+    inset 0 -5.5rem 3.8rem -4.2rem var(--_color---secondary),
+    inset 0 -5.6rem 8rem .57rem #321500 !important;
+}
+
+.home-hero .home-hero-globe-shadow.blue-plus {
+  box-shadow: inset 0 2.6rem 5rem -2.1rem #8dedff !important;
+}
+
+/* Mobile hero: keep every text block in normal flow.
+   The exported layout reserves a fixed height for the animated heading and
+   pins the whole text group to the viewport bottom. On short phones that
+   makes the description and CTA occupy the same visual area as the title. */
+@media screen and (max-width: 767px) {
+  /* The desktop news ticker becomes a pale strip above the mobile header. */
+  .header .related-news {
+    display: none !important;
+  }
+
+  /* Let the hero artwork fill the iPhone safe area instead of leaving a
+     separate strip above it. Header content still clears the camera cutout. */
+  html,
+  body,
+  .body {
+    background-color: #111 !important;
+  }
+
+  .header-inner {
+    padding-top: max(1.5rem, env(safe-area-inset-top)) !important;
+  }
+
+  /* Original hero stack: mobile background, stars, globe, then copy. */
+  .home-hero .home-hero-bg-mb {
+    z-index: 0 !important;
+  }
+
+  .home-hero .home-hero-bg-star {
+    z-index: 1 !important;
+    top: -12rem !important;
+  }
+
+  .home-hero .home-hero-globe {
+    z-index: 2 !important;
+  }
+
+  .home-hero .home-hero-text-wrap {
+    z-index: 4 !important;
+  }
+
+  .home-hero .home-hero-text-wrap::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .home-hero .home-hero-text-wrap {
+    box-sizing: border-box !important;
+    justify-content: flex-end !important;
+    padding-top: clamp(12rem, 27svh, 22rem) !important;
+    padding-bottom: max(1.6rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  .home-hero .home-hero-label {
+    margin: 0 0 1.2rem !important;
+  }
+
+  .home-hero .home-hero-title,
+  .home-hero .home-hero-title .heading {
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+  }
+
+  .home-hero .home-hero-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.8rem !important;
+  }
+
+  .home-hero .home-hero-title .heading {
+    width: 100% !important;
+    font-size: clamp(3rem, 9vw, 3.6rem) !important;
+    line-height: 1.03 !important;
+    overflow: visible !important;
+  }
+
+  .home-hero .home-hero-title .split-line-p {
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  .home-hero .home-hero-desc {
+    margin: 0 0 2.2rem !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .home-hero .home-hero-desc .txt,
+  .home-hero .home-hero-desc .split-line-p {
+    color: rgba(255, 255, 255, 0.82) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.82) !important;
+    font-size: clamp(1.45rem, 4.35vw, 1.8rem) !important;
+    line-height: 1.42 !important;
+  }
+
+  .home-hero .home-hero-links {
+    margin: 0 !important;
+    gap: 1.2rem !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .home-hero-globe .globe-label {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  .home-hero-globe .globe-label.dobrovoz-mobile-city {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+    z-index: 20 !important;
+  }
+
+  .home-hero-globe .globe-label.dobrovoz-mobile-city .globe-label-text {
+    padding: 0.28rem 0.42rem;
+    font-size: 0.62rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+/* Гигантский SVG-текст "DOBROVOZTURK" (.home-service-label, 420px) едет по
+   экрану во время скролл-анимации грузовика, растянутый на весь экран, и
+   сбивает с толку/выглядит как баг. Скрываем визуально через opacity, не
+   display:none - анимация и расчёты ScrollTrigger (от которых зависит показ
+   кнопки "Сделать заказ") завязаны на реальных размерах этого элемента и не
+   должны сломаться из-за его невидимости. */
+/* Текст названий брендов внутри карточек категорий (.home-service-item-title,
+   .home-service-item-desc) reveal-ится через ту же хрупкую scroll-jacked
+   систему (scheduleHorizontalReveals) и при живой прокрутке (не рывками)
+   показывает статус "то большой, то сжимается" - заголовок/бренды дёргаются
+   при повторном пересечении триггера. Фиксируем конечное состояние через CSS,
+   чтобы текст всегда был на месте и не зависел от таймингов JS-анимации. */
+.home-service-item-title,
+.home-service-item-title h3,
+.home-service-item-desc,
+.home-service-item-desc .txt,
+.home-service-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.home-service-label {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Ссылка "Канал" (@dobrovozTurk) в футере получила ту же hover-разметку
+   .link/.link-top/.link-bottom, что и "Менеджер" (см. index.html), чтобы текст
+   тоже переключался при наведении. У остальных ссылок наложение верхнего и
+   нижнего текста друг на друга задаёт Webflow через grid-area на конкретных
+   id элементов - у новой ссылки таких id нет, поэтому дублируем правило
+   классом, иначе строки встают одна под другой вместо наложения. */
+.link-top,
+.link-bottom,
+.link-ic.top,
+.link-ic.bot {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+/* Footer Telegram contacts stay visually stable on hover. */
+.footer-main-contact .footer-link .link-top,
+.footer-main-contact .footer-link .link-bottom,
+.footer-main-contact .footer-link .link-ic {
+  transition: none !important;
+  transform: none !important;
+}
+
+.footer-main-contact .footer-link .link-bottom,
+.footer-main-contact .footer-link .link-ic.bot {
+  display: none !important;
+}
+
+.footer-main-contact .footer-link .link-top,
+.footer-main-contact .footer-link .link-ic.top {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Keep the manager and channel handles visible even when Webflow's hover
+   timeline leaves one of the nested text layers in its translated state. */
+.footer-main-contact .footer-content-item,
+.footer-main-contact .footer-link,
+.footer-main-contact .footer-link .link,
+.footer-main-contact .footer-link .link-inner,
+.footer-main-contact .footer-link .link-top,
+.footer-main-contact .footer-link .link-top .txt {
+  opacity: 1 !important;
+  visibility: visible !important;
+  clip-path: none !important;
+}
+
+.footer-main-contact .footer-link,
+.footer-main-contact .footer-link .link,
+.footer-main-contact .footer-link .link-inner,
+.footer-main-contact .footer-link .link-top,
+.footer-main-contact .footer-link .link-top .txt {
+  transform: none !important;
+}
+
+.footer-main-contact .footer-link .link-inner {
+  min-height: 1.25em;
+  overflow: visible !important;
+}
+
+/* Do not leave the browser's blue focus ring after a mouse click. */
+.header-menu-toggle:focus:not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Поле "Ссылка на товар" и блок "Количество" в форме заказа были на 3.2px
+   разной высоты. У поля-степпера количества (input[data-eo-qty]) общий класс
+   .eo-input с полем ссылки, поэтому оно наследует тот же min-height,
+   рассчитанный под ОТДЕЛЬНОЕ поле с собственной рамкой. Внутри .eo-number-control
+   рамку у него убирают (border:0), но унаследованный min-height остаётся и
+   складывается с рамкой внешнего .eo-number-control, отсюда лишние 3.2px. */
+.eo-number-control input.eo-input {
+  min-height: 0;
+}
+
+/* Иконки профиля и корзины в шапке раньше прятали только до 991px (мобильный).
+   На вебе и планшете (>991px) были видны - убираем везде. */
+.header-act {
+  display: none !important;
+}
+
+/* Блок "Магазины": было 2 отдельные секции (заголовок категории + сетка),
+   одна под другой. Заменили на табы-переключатель (brand-category-tabs.js)
+   над одной сеткой. Скрытая копия заголовка 2й+ категории (текст ушёл в табы) -
+   не удаляем из DOM, а прячем, т.к. позиция в гриде секции задана Webflow
+   через id/grid-area; grid-template-rows тут auto-размерный, поэтому пустая
+   строка после скрытия просто схлопывается, без дыры в вёрстке. По той же
+   причине сводим grid-row всех .home-partners-main к одному значению -
+   у второй и последующих категорий он был на отдельной, более поздней строке. */
+.home-partners-label-wrap-hidden {
+  display: none !important;
+}
+
+.home-partners-main {
+  display: none;
+  grid-row: 2 !important;
+}
+
+.home-partners-main.active {
+  display: block;
+}
+
+/* На десктопе категории остаются в виде одной строки табов. На мобильном
+   этот ряд скрывается и заменяется компактным выпадающим списком. */
+.home-partners-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 2.4rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.home-partners-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.home-partners-tab {
+  flex: none;
+  scroll-snap-align: start;
+  white-space: nowrap;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: "BT Steinhart", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: currentColor;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.home-partners-tab:hover {
+  opacity: 0.7;
+}
+
+.home-partners-tab.active {
+  opacity: 1;
+}
+
+.home-partners-select-wrap {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .home-partners-tabs {
+    display: none;
+  }
+
+  .home-partners-select-wrap {
+    position: relative;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .home-partners-label-wrap-select > .home-partners-label {
+    display: none;
+  }
+
+  .home-partners-select-label {
+    font-family: "BT Steinhart", Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.55;
+  }
+
+  .home-partners-select::after {
+    content: "";
+    flex: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-right: 0.16rem solid currentColor;
+    border-bottom: 0.16rem solid currentColor;
+    transform: rotate(45deg) translateY(-30%);
+    transform-origin: center;
+    pointer-events: none;
+    transition: transform 180ms ease;
+  }
+
+  .home-partners-select-wrap.is-open .home-partners-select::after {
+    transform: rotate(225deg) translate(-15%, -15%);
+  }
+
+  .home-partners-select {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+    width: 100%;
+    min-height: 5.2rem;
+    border: 0.12rem solid currentColor;
+    border-radius: 0.8rem;
+    background: #fff;
+    color: currentColor;
+    padding: 0 1.6rem;
+    font-family: "BT Steinhart", Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .home-partners-select-wrap.is-open .home-partners-select {
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+
+  .home-partners-select:focus-visible {
+    outline: 0.2rem solid currentColor;
+    outline-offset: 0.3rem;
+  }
+
+  .home-partners-dropdown {
+    position: absolute;
+    z-index: 40;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: grid;
+    overflow: hidden;
+    border: 0.12rem solid currentColor;
+    border-top: 0;
+    border-radius: 0 0 0.8rem 0.8rem;
+    background: #fff;
+    box-shadow: 0 1.6rem 3.2rem rgba(17, 17, 17, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.6rem);
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+  }
+
+  .home-partners-select-wrap.is-open .home-partners-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .home-partners-dropdown-option {
+    width: 100%;
+    min-height: 4.6rem;
+    border: 0;
+    border-top: 0.1rem solid rgba(17, 17, 17, 0.14);
+    background: transparent;
+    color: #111;
+    padding: 1.2rem 1.6rem;
+    font-family: "BT Steinhart", Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .home-partners-dropdown-option:first-child {
+    border-top: 0;
+  }
+
+  .home-partners-dropdown-option:hover,
+  .home-partners-dropdown-option:focus-visible {
+    outline: none;
+    background: rgba(244, 83, 0, 0.1);
+  }
+
+  .home-partners-dropdown-option.active {
+    background: #f45300;
+    color: #fff;
+  }
+}
+
+/* Все карточки каталога используют изображения: локальные цветные SVG/PNG,
+   а для брендов без локального файла — значок официального домена. Одинаковая
+   область object-fit выравнивает квадратные знаки и широкие вордмарки по
+   визуальному масштабу, не искажая их пропорции. */
+.home-partners-item-logo {
+  display: block !important;
+  width: 72% !important;
+  height: 4.8rem !important;
+  max-width: 72% !important;
+  max-height: 4.8rem !important;
+  object-fit: contain !important;
+  flex: none;
+  transform: scale(var(--brand-scale, 1));
+  transform-origin: center;
+}
+
+.home-partners-item-thumb {
+  overflow: hidden;
+}
+
+.home-partners-item-thumb-fallback {
+  flex-direction: column;
+}
+
+.home-partners-item-thumb-captioned {
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.home-partners-item-logo-caption {
+  color: #111;
+  font-family: "BT Steinhart", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.home-partners-item-fallback-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  transform: scale(var(--brand-scale, 1));
+  transform-origin: center;
+}
+
+.home-partners-item-favicon {
+  display: block !important;
+  width: 2.8rem !important;
+  height: 2.8rem !important;
+  max-width: 2.8rem !important;
+  max-height: 2.8rem !important;
+  object-fit: contain !important;
+  flex: none;
+}
+
+.home-partners-item-text {
+  max-width: 88%;
+  color: #111;
+  font-family: "BT Steinhart", Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* Villeroy & Boch uses an icon-only favicon fallback. Keep the requested
+   enlarged brand name alongside it so the full name remains on one line. */
+.home-partners-item[data-brand="Villeroy & Boch"] .home-partners-item-fallback-inner {
+  flex-direction: row;
+  gap: 0.75rem;
+  max-width: 90%;
+}
+
+.home-partners-item[data-brand="Villeroy & Boch"] .home-partners-item-favicon {
+  width: 3.2rem !important;
+  height: 3.2rem !important;
+  max-width: 3.2rem !important;
+  max-height: 3.2rem !important;
+}
+
+.home-partners-item[data-brand="Villeroy & Boch"] .home-partners-item-text {
+  max-width: none;
+  white-space: nowrap;
+  font-size: 1.22rem;
+}
+
+@media (max-width: 767.98px) {
+  .home-partners-item[data-brand="Gymshark"],
+  .home-partners-item[data-brand="Jacquemus"],
+  .home-partners-item[data-brand="Next.pl"] {
+    --brand-scale: 1.5 !important;
+  }
+
+  .home-partners-item[data-brand="Villeroy & Boch"] .home-partners-item-fallback-inner {
+    gap: 0.48rem;
+    max-width: 94%;
+  }
+
+  .home-partners-item[data-brand="Villeroy & Boch"] .home-partners-item-favicon {
+    width: 2.45rem !important;
+    height: 2.45rem !important;
+    max-width: 2.45rem !important;
+    max-height: 2.45rem !important;
+  }
+
+  .home-partners-item[data-brand="Villeroy & Boch"] .home-partners-item-text {
+    font-size: 0.9rem;
+  }
+
+  .home-partners-item-logo {
+    width: 70% !important;
+    height: 3.2rem !important;
+    max-width: 70% !important;
+    max-height: 3.2rem !important;
+  }
+
+  .home-partners-item-favicon {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    max-width: 2.25rem !important;
+    max-height: 2.25rem !important;
+  }
+
+  .home-partners-item-text {
+    font-size: 0.95rem;
+  }
+
+  .home-partners-item-logo-caption {
+    font-size: 0.95rem;
+  }
+}
+
+/* Ячейки магазинов - aspect-ratio:16/9 (Webflow), а .home-partners-item-inner
+   внутри - grid с одной строкой auto. Лишняя высота ячейки не распределялась
+   (align-content по умолчанию start), поэтому лого/текст прилипали к верху,
+   а под короткими логотипами (Amazon, Bosch...) оставалась пустая полоса. */
+.home-partners-item-inner {
+  align-content: center;
+}
+
+/* Вся карточка бренда кликабельна. Ссылка уже содержит официальный URL,
+   target="_blank" и rel="noopener noreferrer"; этот слой покрывает логотип
+   и свободную область ячейки во всех категориях. */
+.home-partners-item {
+  position: relative;
+}
+
+.home-partners-brand-link {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+  cursor: pointer;
+}
+
+/* Попап заявки (#eoModalOverlay): вместо закрытия по клику "Отправить заявку"
+   переключаем содержимое модалки на страницу успеха (.eo-modal.is-success). */
+.eo-modal-view-success {
+  display: none;
+  text-align: center;
+}
+
+.eo-modal.is-success .eo-modal-view-form {
+  display: none;
+}
+
+.eo-modal.is-success .eo-modal-view-success {
+  display: block;
+}
+
+.eo-modal-success-icon {
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eo-modal-success-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.eo-modal-view-success .eo-modal-title {
+  text-align: center;
+}
+
+.eo-modal-view-success .eo-modal-sub {
+  text-align: center;
+}
+
+.eo-modal-success-caption {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #111111b8;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+/* Хедер (десктоп): .header-logo имеет margin-top:1.6rem (Webflow), а у
+   .header-menu-list (пункты меню) такого отступа нет - пункты меню сидели
+   выше центра логотипа. Добавляем эквивалентный отступ сверху. */
+@media (min-width: 992px) {
+  .header-menu-list {
+    padding-top: 2.3rem;
+  }
+}
+
+/* Пункты меню (.header-link) по умолчанию скрыты через
+   transform:translateY(-105%) и появляются (transform:translate(0,0%))
+   при добавлении классу .header класса show-menu - JS переключает
+   show-menu/on-scroll при пересечении порога скролла (~2 высоты хедера).
+   При скролле туда-сюда возле этого порога класс дёргается быстрее, чем
+   успевает доиграть transition 0.4s, и текст пунктов остаётся "прилипшим"
+   на середине анимации внутри overflow:hidden обёртки - выглядит как
+   обрезанный снизу. Отключаем эту анимацию, пункты меню всегда на месте. */
+.header-link {
+  transform: translate(0, 0%) !important;
+  transition: none !important;
+}
+
+/* Мобильный хедер: .header - position:sticky с отрицательным top (Webflow,
+   top:-3.3rem на max-width:767px) - это специально обрезает верхушку хедера,
+   когда он "прилипает" при скролле (на десктопе там достаточно пустого
+   отступа над лого, чтобы обрезка была незаметной). На мобильном отступа не
+   хватает - обрезался сам текст лого "DobroVozTurk". Из-за этого при скролле
+   вниз хедер сначала визуально "зависал" наполовину обрезанным и только
+   позже, при пересечении порога toggleHide (3 высоты хедера), исчезал
+   полностью через transform:translateY(-101%) - выглядело как будто хедер
+   прячется не до конца, а потом рывком докрывается. Убираем обрезку: хедер
+   либо показан целиком, либо (позже) прячется полностью. */
+@media (max-width: 767.98px) {
+  .header {
+    top: 0;
+  }
+}
+
+/* Калькулятор стоимости (.eo-calc) и список товаров (.eo-order) стоят в один
+   flex-ряд с align-items:stretch - когда в список добавляют товары, ряд
+   становится выше, и калькулятор растягивается вслед за ним, хотя его
+   контент короткий - снизу остаётся пустое место ("раздувается"). На
+   десктопе сворачиваем калькулятор влево (ширина/паддинги/бордер -> 0) и
+   отдаём всю ширину списку товаров, как только товаров становится больше
+   одного; вернуть калькулятор можно кнопкой-стрелкой слева. */
+@media (min-width: 992px) {
+  #order-form .container {
+    position: relative;
+  }
+
+  .eo-calc,
+  .eo-order {
+    transition: flex-grow 0.45s ease, flex-basis 0.45s ease, opacity 0.3s ease,
+      padding 0.45s ease, margin 0.45s ease, border-color 0.3s ease;
+  }
+
+  #order-form.is-calc-collapsed .container {
+    gap: 0;
+    /* flex-wrap:wrap + .eo-order с basis 100% не помещались на одной строке -
+       калькулятор (нулевой ширины, но с непронулённой высотой) переносился
+       на отдельную строку НАД списком и оставлял пустую полосу высотой в
+       свой собственный контент. Прижимаем к одной строке принудительно. */
+    flex-wrap: nowrap;
+    transition: gap 0.45s ease;
+  }
+
+  #order-form.is-calc-collapsed .eo-calc {
+    /* Webflow задаёт flex шорткодом с !important - перебить точечными
+       flex-grow/flex-basis без !important не получится, проигрывают каскад
+       даже будучи заданы через #id. Тоже шорткодом и тоже !important. */
+    flex: 0 0 0 !important;
+    min-width: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-color: transparent !important;
+    opacity: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  #order-form.is-calc-collapsed .eo-order {
+    /* flex-grow вместо явного basis:100% - иначе элемент сам по себе не
+       помещается в строку рядом ни с чем и тоже провоцирует перенос. */
+    flex: 1 1 0% !important;
+  }
+
+  .eo-calc-restore {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.4rem;
+    height: 4.4rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(17, 17, 17, 0.16);
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    z-index: 6;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .eo-calc-restore:hover {
+    background: #f45300;
+    border-color: #f45300;
+    color: #fff;
+  }
+
+  #order-form.is-calc-collapsed .eo-calc-restore {
+    display: flex;
+  }
+}
+
+@media (max-width: 991px) {
+  .eo-calc-restore {
+    display: none !important;
+  }
+}
+
+/* 2026-10-03: remove the rotating NEWS strip on every viewport. */
+.related-news {
+  display: none !important;
+}
+
+/* Keep the three-line hero headline inside shorter desktop viewports. */
+@media screen and (min-width: 992px) {
+  /* Keep the incoming top-view intersection outside the viewport before
+     ScrollTrigger performs its first render. GSAP replaces this transform
+     as soon as the transition begins. */
+  .home-service-road-wrap {
+    transform: translate3d(100vw, 0, 0);
+  }
+
+  .home-hero .home-hero-title .heading.h1 {
+    font-size: clamp(5.8rem, min(6.6vw, 10.8vh), 8.1rem) !important;
+    line-height: 1.03 !important;
+  }
+
+  .home-hero .home-hero-title {
+    margin-bottom: 3rem !important;
+  }
+
+  .home-hero .hero-brands {
+    margin-top: -0.8rem !important;
+    margin-bottom: 2.2rem !important;
+  }
+
+  .home-hero .home-hero-desc {
+    margin-bottom: 3rem !important;
+  }
+}
+
+/* Наведение на магазин: лого не прячем (Webflow гасит .is-hover до opacity:0),
+   вместо этого слегка подсвечиваем ячейку и чуть увеличиваем лого. */
+.home-partners-item-thumb.is-hover,
+.home-partners-item:hover .home-partners-item-thumb {
+  opacity: 1 !important;
+}
+.home-partners-item-thumb {
+  transition: opacity .3s ease, transform .35s cubic-bezier(.22,.61,.36,1) !important;
+}
+.home-partners-item-inner {
+  transition: background-color .35s ease, box-shadow .35s ease !important;
+}
+.home-partners-item:hover .home-partners-item-inner {
+  background-color: rgba(17, 17, 17, .035) !important;
+  box-shadow: inset 0 0 0 1px rgba(17, 17, 17, .12);
+}
+.home-partners-item:hover .home-partners-item-thumb {
+  transform: scale(1.06);
+}
+@media (hover: none) {
+  .home-partners-item:hover .home-partners-item-thumb { transform: none; }
+}
+@media (max-width: 767.98px) {
+  html.dobrovoz-mobile-nav-open,
+  html.dobrovoz-mobile-nav-open body {
+    overflow: hidden !important;
+  }
+
+  .header.on-open-nav .header-dropdown {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .header.on-open-nav .header-dropdown-bg {
+    clip-path: inset(0 0 0 0) !important;
+  }
+
+  /* Compact mobile menu heading: keep the wordmark and close control on one
+     line, and start the menu immediately below it. The source layout reserves
+     roughly 10.5rem above the links and gives the toggle asymmetric padding,
+     which produced an oversized black plaque and pushed the X downward. */
+  .header-inner {
+    height: 68px !important;
+    padding: 0 !important;
+  }
+
+  .header-inner > .container {
+    height: 68px !important;
+    min-height: 68px !important;
+    padding: 0 16px !important;
+    align-items: center !important;
+  }
+
+  .header-logo {
+    height: auto !important;
+    margin: 0 !important;
+    align-self: center !important;
+  }
+
+  .header-menu-toggle-wrap,
+  .header-menu-toggle-wrap:has(.header-menu-toggle.active) {
+    top: 12px !important;
+    right: 16px !important;
+    left: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    transform: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .header-menu-toggle {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .header-menu-toggle-text,
+  .header-menu-toggle-text-inner,
+  .header-menu-toggle-text-close,
+  .header-close-x {
+    width: 44px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    text-align: center !important;
+  }
+
+  .header-dropdown {
+    padding-top: 68px !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   All-width layout containment
+
+   The catalogue and order form used content-sized flex/grid children. At
+   desktop widths affected by OS/browser scaling those children kept a wider
+   intrinsic width than the viewport. Hiding horizontal overflow only masked
+   that error, so the right side was clipped. These rules make the actual
+   content tracks shrink and reflow inside the available width.
+   ------------------------------------------------------------------------- */
+
+.loader,
+.loader-inner,
+.loader-page,
+.loader-bg,
+.loader-circs-mask {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+.home-partners-wrap,
+.home-partners-label-wrap,
+.home-partners-main,
+.home-partners-list,
+.home-partners-tabs {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.home-partners-main.active,
+.home-partners-list {
+  width: 100% !important;
+}
+
+.home-partners-list {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  grid-auto-flow: row !important;
+}
+
+.home-partners-item,
+.home-partners-item-inner,
+.home-partners-item-thumb {
+  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: 100%;
+}
+
+.home-partners-item {
+  width: auto !important;
+}
+
+/* Minimal full-width separators for subgroups and multibrand stores. */
+.home-partners-section-label {
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 1.4rem 1.2rem 1.1rem;
+  border-top: 1px solid rgba(17, 17, 17, .18);
+  color: rgba(17, 17, 17, .58);
+  font-family: "BT Steinhart", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.home-partners-list > .home-partners-section-label:first-child {
+  border-top: 0;
+}
+
+@media (max-width: 767.98px) {
+  .home-partners-section-label {
+    padding: 1.4rem .8rem 1rem;
+    font-size: 1.4rem;
+  }
+}
+
+.eo-section .container {
+  display: grid !important;
+  grid-template-columns: minmax(0, 42fr) minmax(0, 48fr) !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.eo-head {
+  grid-column: 1 / -1;
+}
+
+.eo-calc,
+.eo-order,
+.eo-list,
+.eo-item,
+.eo-item-body,
+.eo-item-body-inner,
+.eo-calc-grid,
+.eo-calc-fields,
+.eo-actions {
+  box-sizing: border-box;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.eo-calc,
+.eo-order {
+  width: auto !important;
+}
+
+.eo-order .eo-field,
+.eo-order .eo-field-qty {
+  min-width: 0 !important;
+}
+
+.eo-order .eo-field-qty {
+  flex: 0 1 22rem !important;
+}
+
+.eo-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.eo-actions .btn,
+.eo-actions .eo-btn-outline {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .home-partners-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .eo-section .container {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .eo-head,
+  .eo-calc,
+  .eo-order {
+    grid-column: 1;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .home-partners-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .eo-section .container {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .eo-head,
+  .eo-calc,
+  .eo-order {
+    grid-column: 1;
+    width: 100% !important;
+  }
+
+  .eo-order .eo-item-body-inner,
+  .eo-calc-fields,
+  .eo-actions {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .eo-order .eo-field,
+  .eo-order .eo-field-qty {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+}
+
+/* Functional first-load screen: use the compact concentric-circle variant. */
+html.dv-loader-pending .loader {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transition: opacity 0.55s ease !important;
+}
+
+html.dv-loader-pending .loader-home {
+  display: none !important;
+}
+
+html.dv-loader-pending .loader-page {
+  display: grid !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.dv-loader-pending .loader-page-logo {
+  z-index: 12;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+html.dv-loader-pending .loader-circ {
+  opacity: calc(0.22 + (var(--dv-loader-progress, 0) * 0.004)) !important;
+  filter: none !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  animation: dv-loader-breathe 1.8s ease-in-out infinite alternate;
+}
+
+html.dv-loader-pending .loader-circ:nth-child(2) {
+  animation-delay: -0.35s;
+}
+
+html.dv-loader-pending .loader-circ:nth-child(3) {
+  animation-delay: -0.7s;
+}
+
+html.dv-loader-pending .loader-circ:nth-child(4) {
+  animation-delay: -1.05s;
+}
+
+html.dv-loader-leaving .loader {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@keyframes dv-loader-breathe {
+  from {
+    border-color: #29292e;
+  }
+  to {
+    border-color: #5b5b64;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.dv-loader-pending .loader-circ {
+    animation: none;
+  }
+}
+
