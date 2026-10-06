@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-06 — GitHub publication
+
+- Replaced the contents of the existing `Evgeny-Spark-Designs/dobrovoz-landing` `main` branch with this local release while preserving the repository address and its GitHub Pages site.
+
 ## 2026-10-06 — Cosmetics logo refinements
 
 - Increased the optical scale of the Avène and Vichy favicon-plus-name cards.
