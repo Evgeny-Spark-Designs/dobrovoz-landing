@@ -145,8 +145,8 @@
     'IKEA': 1.08, 'Zara Home': 1, 'H&M Home': 1, 'Tefal': 0.88,
     'Villeroy & Boch': 1.65, 'KitchenAid': 1.08, 'Smeg': 1.12,
     'Kärcher': 0.95, 'De’Longhi': 2.4, 'Minotti': 1.45,
-    'MOHD': 1.45, 'Westwing': 1.18, 'Connox': 1.45,
-    'Nordic Nest': 1.45, 'AmbienteDirect': 1.45,
+    'MOHD': 1.38, 'Westwing': 1.3, 'Connox': 1.37,
+    'Nordic Nest': 1.38, 'AmbienteDirect': 1.38,
 
     'Apple': 1.08, 'Sony': 1, 'PlayStation': 1.12, 'Dyson': 1.05,
     'DJI': 1.28, 'GoPro': 1, 'Insta360': 1.12, 'Bosch': 1,
@@ -249,11 +249,11 @@
         {
           title: 'Мультибрендовые магазины',
           items: [
-            brand('MOHD', 'https://shop.mohd.it/'),
+            brand('MOHD', 'https://shop.mohd.it/', 'mohd.svg'),
             brand('Westwing', 'https://www.westwing.de/', 'westwing.svg'),
-            brand('Connox', 'https://www.connox.com/'),
-            brand('Nordic Nest', 'https://www.nordicnest.com/'),
-            brand('AmbienteDirect', 'https://www.ambientedirect.com/')
+            brand('Connox', 'https://www.connox.com/', 'connox.png'),
+            brand('Nordic Nest', 'https://www.nordicnest.com/', 'nordic-nest.svg'),
+            brand('AmbienteDirect', 'https://www.ambientedirect.com/', 'ambientedirect.svg')
           ]
         }
       ]

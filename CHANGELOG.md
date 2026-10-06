@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-06 — Home-store logo sources
+
+- Replaced the compact fallback artwork for MOHD, Connox, Nordic Nest and AmbienteDirect with high-resolution official logo files; refreshed Westwing with the current vector wordmark.
+- Increased the optical scale of all five user-marked home-store logos so they align with the neighbouring brand cards.
+
 ## 2026-10-06 — Reima logo and Yamaha caption correction
 
 - Replaced the Reima favicon fallback with the official red vector wordmark provided in the [Reima logo download](https://company.reima.com/media/contacts).
