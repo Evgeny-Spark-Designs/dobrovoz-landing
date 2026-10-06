@@ -4,6 +4,7 @@
 
 - Added the `.nojekyll` deployment marker so GitHub Pages serves the `_assets` directory unchanged. This restores the main Webflow stylesheet, scripts and image assets that were otherwise excluded by Jekyll.
 - Updated the primary stylesheet URL version so browsers discard any cached missing-asset response after the deployment change.
+- Added a static-host fallback for the unavailable Webflow animation runtime: it restores native desktop scrolling and ensures the first-screen content remains visible.
 
 ## 2026-10-06 — Mobile loading-screen fail-safe
 

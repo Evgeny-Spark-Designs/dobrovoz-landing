@@ -1704,3 +1704,28 @@ html.dv-loader-leaving .loader {
   }
 }
 
+/* GitHub Pages fallback: the original Webflow runtime only authorizes the
+   production domain. If it cannot start, its desktop bootstrap leaves the
+   document fixed and the hero animation targets transparent. Keep the actual
+   site readable and natively scrollable on any static host. */
+@media (min-width: 768px) {
+  html,
+  body.body {
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body.body {
+    position: relative !important;
+    inset: auto !important;
+  }
+
+  .home-hero-text-wrap,
+  .home-hero-globe {
+    opacity: 1 !important;
+  }
+}
+
