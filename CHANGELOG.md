@@ -5,6 +5,7 @@
 - Added the `.nojekyll` deployment marker so GitHub Pages serves the `_assets` directory unchanged. This restores the main Webflow stylesheet, scripts and image assets that were otherwise excluded by Jekyll.
 - Updated the primary stylesheet URL version so browsers discard any cached missing-asset response after the deployment change.
 - Authorized the GitHub Pages hostname in the bundled Webflow runtime so the original animation and smooth-scrolling system can run instead of being stopped by its domain guard.
+- Unified the homepage module URL with the page entrypoint and refreshed its cache key, preventing a duplicate Webflow/Barba startup that stopped homepage animations and content sections from initializing on GitHub Pages.
 
 ## 2026-10-06 — Mobile loading-screen fail-safe
 
