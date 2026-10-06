@@ -1025,6 +1025,13 @@ textarea {
   text-align: center;
 }
 
+/* Yamaha uses a tall round emblem. Its optical enlargement is applied with a
+   transform, which does not reserve additional layout space; make room for
+   the requested brand caption so the two marks never overlap. */
+.home-partners-item[data-brand="Yamaha"] .home-partners-item-logo {
+  margin-bottom: 1.5rem;
+}
+
 .home-partners-item-fallback-inner {
   display: flex;
   flex-direction: column;

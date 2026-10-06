@@ -163,7 +163,7 @@
     'Charlotte Tilbury': 2.05, 'The Ordinary': 2.05, 'makeup.lt': 2.15,
 
     'LEGO': 1.38, 'Barbie / Mattel': 1.25, 'Fisher-Price': 1.08,
-    'Hasbro': 2.05, 'Playmobil': 1.12, 'Reima': 2.1,
+    'Hasbro': 2.05, 'Playmobil': 1.12, 'Reima': 1.08,
     'Zara Kids': 1, 'H&M Kids': 1, 'Next Kids': 2.1,
     'Cybex': 2.1, 'Bugaboo': 2.1, 'Stokke': 2.1,
     'Doona': 2.15, 'Maxi-Cosi': 2.1, 'Britax Römer': 1.08,
@@ -330,7 +330,7 @@
             brand('Fisher-Price', 'https://www.fisher-price.com/', 'fisherprice.svg'),
             brand('Hasbro', 'https://shop.hasbro.com/', 'hasbro.svg'),
             brand('Playmobil', 'https://www.playmobil.com/', 'playmobil.svg'),
-            brand('Reima', 'https://www.reima.com/'),
+            brand('Reima', 'https://www.reima.com/', 'reima.svg'),
             brand('Zara Kids', 'https://www.zara.com/kids/', 'zara.svg'),
             brand('H&M Kids', 'https://www2.hm.com/kids.html', 'handm.svg'),
             brand('Next Kids', 'https://www.next.pl/'),

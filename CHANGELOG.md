@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-06 — Reima logo and Yamaha caption correction
+
+- Replaced the Reima favicon fallback with the official red vector wordmark provided in the [Reima logo download](https://company.reima.com/media/contacts).
+- Added layout room below the enlarged Yamaha emblem so its brand-name caption no longer overlaps the logo.
+
 ## 2026-10-06 — Catalogue-wide optical scale pass
 
 - Enlarged the user-marked compact logos across cosmetics, children’s goods, hobby, food and drinks, and winter-sports categories so their visual weight matches neighbouring full wordmarks.
