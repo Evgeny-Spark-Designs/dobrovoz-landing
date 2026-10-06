@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-06 — Mobile loading-screen fail-safe
+
+- Reduced the first-load wait ceiling from 6.5 seconds to 1.5 seconds so slow third-party assets cannot leave the mobile site on a black screen.
+- Added a markup-level fallback that clears the loading layer even if its controller script cannot run.
+
 ## 2026-10-06 — Home-store logo sources
 
 - Replaced the compact fallback artwork for MOHD, Connox, Nordic Nest and AmbienteDirect with high-resolution official logo files; refreshed Westwing with the current vector wordmark.

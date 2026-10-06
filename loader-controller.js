@@ -4,7 +4,9 @@
   var root = document.documentElement;
   var startedAt = performance.now();
   var minimumVisibleTime = 850;
-  var maximumWaitTime = 6500;
+  // Never leave the page hidden behind the first-load layer while a slow or
+  // unavailable third-party asset is still loading (notably on mobile data).
+  var maximumWaitTime = 1500;
   var finished = false;
 
   function waitForWindowLoad() {
